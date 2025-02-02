@@ -29,6 +29,9 @@
 
 #define BOARD_INFO_NAME "Creality3D RAMPS"
 
+#define Z_MIN_PIN                         19  // Z+
+#define Z_MAX_PIN                         18  // Z-
+
 //#define CR2020_INDUSTRIAL_SERIES                // Use layout specific to CR2020
 
 //
