@@ -23,11 +23,46 @@
 
 // User-defined table 1
 // Dummy Thermistor table.. It will ALWAYS read a fixed value.
-#ifndef DUMMY_THERMISTOR_998_VALUE
-  #define DUMMY_THERMISTOR_998_VALUE 25
-#endif
+//#ifndef DUMMY_THERMISTOR_998_VALUE
+//  #define DUMMY_THERMISTOR_998_VALUE 25
+//#endif
 
 constexpr temp_entry_t temptable_998[] PROGMEM = {
-  { OV(   1), DUMMY_THERMISTOR_998_VALUE },
-  { OV(1023), DUMMY_THERMISTOR_998_VALUE }
+{ OV(155), 4 },
+{ OV(170), 6 },
+{ OV(185), 8 },
+{ OV(200), 10 },
+{ OV(215), 12 },
+{ OV(243), 15 },
+{ OV(268), 18 },
+{ OV(278), 19 },
+{ OV(287), 20 },
+{ OV(296), 21 },
+{ OV(306), 22 },
+{ OV(325), 24 },
+{ OV(346), 26 },
+{ OV(377), 29 },
+{ OV(400), 31 },
+{ OV(420), 33 },
+{ OV(430), 34 },
+{ OV(470), 38 },
+{ OV(476), 39 },
+{ OV(493), 41 },
+{ OV(505), 42 },
+{ OV(535), 45 },
+{ OV(570), 49 },
+{ OV(622), 54 },
+{ OV(644), 56 },
+{ OV(670), 60 },
+{ OV(702), 64 },
+{ OV(730), 67 },
+{ OV(760), 72 },
+{ OV(778), 74 },
+{ OV(797), 77 },
+{ OV(810), 80 },
+{ OV(840), 85 },
+{ OV(850), 87 },
+{ OV(863), 90 },
+{ OV(870), 92 },
+{ OV(883), 95 }
 };

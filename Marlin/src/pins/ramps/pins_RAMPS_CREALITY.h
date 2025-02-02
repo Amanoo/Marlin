@@ -42,6 +42,8 @@
 #define EXP3_PIN                              11  // RAMPS: SERVO0_PIN
 #define EXP4_PIN                              12  // RAMPS: PS_ON_PIN
 
+#define TEMP_CHAMBER_PIN EXP1_PIN
+
 //
 // Servos
 //
