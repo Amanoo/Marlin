@@ -65,6 +65,7 @@ enum class DGUS_Addr : uint16_t {
   TEMP_Preset             = 0x2010, // Popup / Data: DGUS_Data::TempPreset
   TEMP_SetTarget_Bed      = 0x2011, // Type: Integer (16 bits signed)
   TEMP_SetTarget_H0       = 0x2012, // Type: Integer (16 bits signed)
+  TEMP_SetTarget_Chamber  = 0x2013, // Type: Integer (16 bits signed)
   #if HAS_MULTI_HOTEND
     TEMP_SetTarget_H1     = 0x2013, // Type: Integer (16 bits signed)
   #endif
@@ -123,6 +124,9 @@ enum class DGUS_Addr : uint16_t {
   TEMP_Current_H0         = 0x30FF, // Type: Fixed point, 1 decimal (16 bits signed)
   TEMP_Target_H0          = 0x3100, // Type: Integer (16 bits signed)
   TEMP_Max_H0             = 0x3101, // Type: Integer (16 bits unsigned)
+  TEMP_Current_Chamber    = 0x3102, // Type: Fixed point, 1 decimal (16 bits signed)
+  TEMP_Target_Chamber     = 0x3103, // Type: Integer (16 bits signed)
+  TEMP_Max_Chamber        = 0x3104, // Type: Integer (16 bits unsigned)
   #if HAS_MULTI_HOTEND
     TEMP_Current_H1       = 0x3102, // Type: Fixed point, 1 decimal (16 bits signed)
     TEMP_Target_H1        = 0x3103, // Type: Integer (16 bits signed)
