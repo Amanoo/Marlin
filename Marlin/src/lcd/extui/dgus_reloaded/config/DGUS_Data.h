@@ -55,10 +55,11 @@ namespace DGUS_Data {
   };
 
   enum class Heater : int8_t {
-    ALL = -2,
-    BED = -1,
-    H0  = 0,
-    H1  = 1
+    ALL     = -2,
+    BED     = -1,
+    H0      = 0,
+    H1      = 1,
+    CHAMBER = 2,
   };
 
   enum class Control : uint8_t {

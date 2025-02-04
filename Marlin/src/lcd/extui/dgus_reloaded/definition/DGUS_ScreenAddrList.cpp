@@ -33,6 +33,8 @@ constexpr DGUS_Addr LIST_HOME[] PROGMEM = {
   DGUS_Addr::TEMP_Target_H0,
   DGUS_Addr::TEMP_Current_Bed,
   DGUS_Addr::TEMP_Target_Bed,
+  DGUS_Addr::TEMP_Current_Chamber,
+  DGUS_Addr::TEMP_Target_Chamber,
   DGUS_Addr::END
 };
 
@@ -55,6 +57,8 @@ constexpr DGUS_Addr LIST_PRINT_STATUS[] PROGMEM = {
   DGUS_Addr::TEMP_Target_H0,
   DGUS_Addr::TEMP_Current_Bed,
   DGUS_Addr::TEMP_Target_Bed,
+  DGUS_Addr::TEMP_Current_Chamber,
+  DGUS_Addr::TEMP_Target_Chamber,
   DGUS_Addr::STATUS_PositionZ,
   DGUS_Addr::STATUS_Elapsed,
   DGUS_Addr::STATUS_Percent,
@@ -65,6 +69,7 @@ constexpr DGUS_Addr LIST_PRINT_STATUS[] PROGMEM = {
 constexpr DGUS_Addr LIST_PRINT_ADJUST[] PROGMEM = {
   DGUS_Addr::TEMP_Target_H0,
   DGUS_Addr::TEMP_Target_Bed,
+  DGUS_Addr::TEMP_Target_Chamber,
   DGUS_Addr::FAN0_Speed,
   DGUS_Addr::ADJUST_Feedrate,
   DGUS_Addr::ADJUST_Flowrate_CUR,
@@ -77,6 +82,8 @@ constexpr DGUS_Addr LIST_PRINT_FINISHED[] PROGMEM = {
   DGUS_Addr::TEMP_Target_H0,
   DGUS_Addr::TEMP_Current_Bed,
   DGUS_Addr::TEMP_Target_Bed,
+  DGUS_Addr::TEMP_Current_Chamber,
+  DGUS_Addr::TEMP_Target_Chamber,
   DGUS_Addr::STATUS_PositionZ,
   DGUS_Addr::STATUS_Elapsed,
   DGUS_Addr::STATUS_Percent_Complete,
@@ -88,6 +95,8 @@ constexpr DGUS_Addr LIST_TEMP_MENU[] PROGMEM = {
   DGUS_Addr::TEMP_Target_H0,
   DGUS_Addr::TEMP_Current_Bed,
   DGUS_Addr::TEMP_Target_Bed,
+  DGUS_Addr::TEMP_Current_Chamber,
+  DGUS_Addr::TEMP_Target_Chamber,
   DGUS_Addr::END
 };
 
@@ -98,6 +107,9 @@ constexpr DGUS_Addr LIST_TEMP_MANUAL[] PROGMEM = {
   DGUS_Addr::TEMP_Current_Bed,
   DGUS_Addr::TEMP_Target_Bed,
   DGUS_Addr::TEMP_Max_Bed,
+  DGUS_Addr::TEMP_Current_Chamber,
+  DGUS_Addr::TEMP_Target_Chamber,
+  DGUS_Addr::TEMP_Max_Chamber,
   DGUS_Addr::END
 };
 
@@ -130,6 +142,8 @@ constexpr DGUS_Addr LIST_LEVELING_AUTOMATIC[] PROGMEM = {
   DGUS_Addr::TEMP_Target_H0,
   DGUS_Addr::TEMP_Current_Bed,
   DGUS_Addr::TEMP_Target_Bed,
+  DGUS_Addr::TEMP_Current_Chamber,
+  DGUS_Addr::TEMP_Target_Chamber,
   DGUS_Addr::LEVEL_AUTO_DisableIcon,
   DGUS_Addr::LEVEL_AUTO_Grid,
   DGUS_Addr::END

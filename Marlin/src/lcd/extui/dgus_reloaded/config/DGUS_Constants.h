@@ -53,6 +53,10 @@
   #define DGUS_PLA_TEMP_BED 60
 #endif
 
+#ifndef DGUS_PLA_TEMP_CHAMBER
+  #define DGUS_PLA_TEMP_CHAMBER 50
+#endif
+
 #ifndef DGUS_ABS_TEMP_HOTEND
   #define DGUS_ABS_TEMP_HOTEND 240
 #endif

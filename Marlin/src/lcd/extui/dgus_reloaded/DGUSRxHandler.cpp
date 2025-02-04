@@ -325,6 +325,9 @@ void DGUSRxHandler::tempTarget(DGUS_VP &vp, void *data_ptr) {
     case DGUS_Addr::TEMP_SetTarget_H0:
       ExtUI::setTargetTemp_celsius(temp, ExtUI::H0);
       break;
+    case DGUS_Addr::TEMP_SetTarget_Chamber:
+      ExtUI::setTargetTemp_celsius(temp, ExtUI::CHAMBER);
+      break;
     #if HAS_MULTI_HOTEND
       case DGUS_Addr::TEMP_SetTarget_H1:
         ExtUI::setTargetTemp_celsius(temp, ExtUI::H1);
@@ -345,6 +348,7 @@ void DGUSRxHandler::tempCool(DGUS_VP &vp, void *data_ptr) {
     case DGUS_Data::Heater::ALL:
       ExtUI::setTargetTemp_celsius(0, ExtUI::BED);
       ExtUI::setTargetTemp_celsius(0, ExtUI::H0);
+      ExtUI::setTargetTemp_celsius(0, ExtUI::CHAMBER);
       #if HAS_MULTI_HOTEND
         ExtUI::setTargetTemp_celsius(0, ExtUI::H1);
       #endif
@@ -354,6 +358,9 @@ void DGUSRxHandler::tempCool(DGUS_VP &vp, void *data_ptr) {
       break;
     case DGUS_Data::Heater::H0:
       ExtUI::setTargetTemp_celsius(0, ExtUI::H0);
+      break;
+    case DGUS_Data::Heater::CHAMBER:
+      ExtUI::setTargetTemp_celsius(0, ExtUI::CHAMBER);
       break;
     #if HAS_MULTI_HOTEND
       case DGUS_Data::Heater::H1:
@@ -789,6 +796,10 @@ void DGUSRxHandler::pidSelect(DGUS_VP &vp, void *data_ptr) {
       screen.pid_temp = DGUS_PLA_TEMP_HOTEND;
       screen.pid_heater = heater;
       break;
+    case DGUS_Data::Heater::CHAMBER:
+      screen.pid_temp = DGUS_PLA_TEMP_CHAMBER;
+      screen.pid_heater = heater;
+      break;
   }
 
   screen.pid_cycles = 5;
@@ -823,6 +834,9 @@ void DGUSRxHandler::pidSetTemp(DGUS_VP &vp, void *data_ptr) {
         LIMIT(temp, celsius_t(HEATER_1_MINTEMP), thermalManager.hotend_max_target(0));
         break;
     #endif
+      case DGUS_Data::Heater::CHAMBER:
+        LIMIT(temp, celsius_t(CHAMBER_MINTEMP), celsius_t(CHAMBER_MAX_TARGET));
+        break;
   }
 
   screen.pid_temp = temp;
@@ -869,7 +883,10 @@ void DGUSRxHandler::pidRun(DGUS_VP &vp, void *data_ptr) {
           screen.setStatusMessage(GET_TEXT_F(DGUS_MSG_PID_DISABLED));
           return;
         #endif
-    #endif
+    case DGUS_Data::Heater::CHAMBER:
+        heater = H_CHAMBER;
+        break;
+      #endif
   }
 
   char buffer[24];
