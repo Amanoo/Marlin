@@ -66,9 +66,6 @@ enum class DGUS_Addr : uint16_t {
   TEMP_SetTarget_Bed      = 0x2011, // Type: Integer (16 bits signed)
   TEMP_SetTarget_H0       = 0x2012, // Type: Integer (16 bits signed)
   TEMP_SetTarget_Chamber  = 0x2013, // Type: Integer (16 bits signed)
-  #if HAS_MULTI_HOTEND
-    TEMP_SetTarget_H1     = 0x2013, // Type: Integer (16 bits signed)
-  #endif
   TEMP_Cool               = 0x2014, // Data: DGUS_Data::Heater
   STEPPER_Control         = 0x2015, // Popup / Data: DGUS_Data::Control
   LEVEL_OFFSET_Set        = 0x2016, // Type: Fixed point, 2 decimals (16 bits signed)
@@ -126,12 +123,7 @@ enum class DGUS_Addr : uint16_t {
   TEMP_Max_H0             = 0x3101, // Type: Integer (16 bits unsigned)
   TEMP_Current_Chamber    = 0x3102, // Type: Fixed point, 1 decimal (16 bits signed)
   TEMP_Target_Chamber     = 0x3103, // Type: Integer (16 bits signed)
-  TEMP_Max_Chamber        = 0x3104, // Type: Integer (16 bits unsigned)
-  #if HAS_MULTI_HOTEND
-    TEMP_Current_H1       = 0x3102, // Type: Fixed point, 1 decimal (16 bits signed)
-    TEMP_Target_H1        = 0x3103, // Type: Integer (16 bits signed)
-    TEMP_Max_H1           = 0x3104, // Type: Integer (16 bits unsigned)
-  #endif
+  TEMP_Max_Chamber        = 0x3111, // Type: Integer (16 bits unsigned)
   STEPPER_Status          = 0x3105, // Data: DGUS_Data::Status
   LEVEL_OFFSET_Current    = 0x3106, // Type: Fixed point, 2 decimals (16 bits signed)
   LEVEL_OFFSET_StepIcons  = 0x3107, // Bits: DGUS_Data::StepIcon

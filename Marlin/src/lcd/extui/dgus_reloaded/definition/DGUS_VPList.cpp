@@ -218,10 +218,10 @@ const struct DGUS_VP vp_list[] PROGMEM = {
                     &DGUSTxHandler::extraToInteger<int16_t>),
   VP_HELPER_TX(DGUS_Addr::TEMP_Max_H0, &DGUSTxHandler::tempMax),
   VP_HELPER_TX_AUTO(DGUS_Addr::TEMP_Current_Chamber,
-                    &thermalManager.temp_bed.celsius,
+                    &thermalManager.temp_chamber.celsius,
                     (&DGUSTxHandler::extraToFixedPoint<float, 0>)),
   VP_HELPER_TX_AUTO(DGUS_Addr::TEMP_Target_Chamber,
-                    &thermalManager.temp_bed.target,
+                    &thermalManager.temp_chamber.target,
                     &DGUSTxHandler::extraToInteger<int16_t>),
   VP_HELPER_TX(DGUS_Addr::TEMP_Max_Chamber, &DGUSTxHandler::tempMax),
   #if HAS_MULTI_HOTEND
